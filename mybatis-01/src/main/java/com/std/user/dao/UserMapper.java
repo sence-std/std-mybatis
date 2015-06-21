@@ -10,28 +10,28 @@ import java.util.List;
 public interface UserMapper {
 
     /**
-     * 保存用户
+     * 淇濆瓨鐢ㄦ埛
      * @param user
      * @return
      */
-  //  public int saveUser(User user);
+    public Integer saveUser(User user);
 
     /**
-     * 更新用户
+     * 鏇存柊鐢ㄦ埛
      * @param user
      * @return
      */
  //   public int updateUser(User user);
 
     /**
-     * 查找用户
+     * 鏌ユ壘鐢ㄦ埛
      * @param userId
      * @return
      */
     public User selectUser(Integer userId);
 
     /**
-     * 查找users
+     * 鏌ユ壘users
      * @param user
      * @return
      */

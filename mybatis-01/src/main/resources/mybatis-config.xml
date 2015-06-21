@@ -14,11 +14,12 @@
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"></transactionManager>
-            <dataSource type="pooled">
+            <dataSource type="pooled" >
                 <property name="driver" value="${jdbc.master.mariadb.driver}"/>
                 <property name="url" value="${jdbc.master.mariadb.url}"/>
                 <property name="username" value="${jdbc.master.mariadb.username}"/>
                 <property name="password" value="${jdbc.master.mariadb.password}"/>
+                <property name="driver.encoding" value="UTF-8"/>
             </dataSource>
         </environment>
     </environments>
