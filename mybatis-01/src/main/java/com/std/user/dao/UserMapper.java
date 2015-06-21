@@ -14,27 +14,27 @@ public interface UserMapper {
      * @param user
      * @return
      */
-    public int saveUser(User user);
+  //  public int saveUser(User user);
 
     /**
      * 更新用户
      * @param user
      * @return
      */
-    public int updateUser(User user);
+ //   public int updateUser(User user);
 
     /**
      * 查找用户
-     * @param user
+     * @param userId
      * @return
      */
-    public User queryUser(User user);
+    public User selectUser(Integer userId);
 
     /**
      * 查找users
      * @param user
      * @return
      */
-    public List<User> queryUsers(User user);
+  //  public List<User> selectUsers(User user);
 
 }

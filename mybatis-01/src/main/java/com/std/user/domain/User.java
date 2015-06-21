@@ -10,7 +10,7 @@ public class User {
     private Integer userAge;
     private String userLoginName;
     private String userPassword;
-    private String userMail;
+    private String userEmail;
     private String userPhone;
 
     public String getUserPhone() {
@@ -61,11 +61,11 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public String getUserMail() {
-        return userMail;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUserMail(String userMail) {
-        this.userMail = userMail;
+    public void getUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }
