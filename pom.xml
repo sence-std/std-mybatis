@@ -11,6 +11,7 @@
     <modules>
         <module>mybatis-01</module>
         <module>mybatis-common</module>
+        <module>mybatis-spring</module>
     </modules>
 
     <properties>
