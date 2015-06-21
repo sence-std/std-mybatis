@@ -29,7 +29,7 @@ public class T_UserDao {
     }
 
     @Test
-    public void testSaveUser(){
+    public void testSelectUser(){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         User user = userMapper.selectUser(1);
