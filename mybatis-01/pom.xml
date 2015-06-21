@@ -24,6 +24,10 @@
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.sence.std</groupId>
+            <artifactId>mybatis-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

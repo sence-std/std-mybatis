@@ -1,3 +1,5 @@
+package com.std.user;
+
 import org.junit.Assert;
 import org.junit.Test;
 

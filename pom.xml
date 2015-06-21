@@ -17,6 +17,7 @@
         <junit.version>4.12</junit.version>
         <mybatis.version>3.2.8</mybatis.version>
         <mariadb.driver.verison>1.1.8</mariadb.driver.verison>
+        <mybatis.common.version>1.0-SNAPSHOT</mybatis.common.version>
     </properties>
 
     <dependencyManagement>
@@ -36,6 +37,11 @@
                 <groupId>org.mariadb.jdbc</groupId>
                 <artifactId>mariadb-java-client</artifactId>
                 <version>${mariadb.driver.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sence.std</groupId>
+                <artifactId>mybatis-common</artifactId>
+                <version>${mybatis.common.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
