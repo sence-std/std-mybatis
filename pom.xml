@@ -20,6 +20,9 @@
         <mybatis.version>3.2.8</mybatis.version>
         <mariadb.driver.verison>1.1.8</mariadb.driver.verison>
         <mybatis.common.version>1.0-SNAPSHOT</mybatis.common.version>
+        <spring.version>4.1.6.RELEASE</spring.version>
+        <dbcp.version>1.4</dbcp.version>
+        <mybatis.spring.version>1.2.3</mybatis.spring.version>
     </properties>
 
     <dependencyManagement>
@@ -44,6 +47,33 @@
                 <groupId>com.sence.std</groupId>
                 <artifactId>mybatis-common</artifactId>
                 <version>${mybatis.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--jdbc-->
+            <dependency>
+                <groupId>commons-dbcp</groupId>
+                <artifactId>commons-dbcp</artifactId>
+                <version>${dbcp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis.spring.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
