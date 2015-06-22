@@ -4,13 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.std.user.dao.UserMapper">
 
-    <insert id="saveUser" parameterType="User" flushCache="true" useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId">
+    <insert id="saveUser" parameterType="com.std.user.domain.User" flushCache="true" useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId">
       INSERT INTO std_user(user_login_name,user_password,user_name,user_age,user_email,user_phone) VALUES (
         #{userLoginName},#{userPassword},#{userName},#{userAge},#{userEmail},#{userPhone}
       );
     </insert>
 
-    <select id="selectUser" resultType="User" useCache="true" timeout="3000">
+    <select id="selectUser" resultType="com.std.user.domain.User" useCache="true" timeout="3000">
         select
         user_id as userId,
         user_login_name as userLoginName,

@@ -1,10 +1,12 @@
 package com.std.user.dao;
 
 import com.std.user.domain.User;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by sence on 2015/6/21.
  */
+@Repository("userMapper")
 public interface UserMapper {
 
     /**
