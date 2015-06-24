@@ -25,6 +25,7 @@
         <mybatis.spring.version>1.2.3</mybatis.spring.version>
         <slf4j.api.version>1.7.12</slf4j.api.version>
         <log4j.version>1.2.17</log4j.version>
+        <jackson.version>2.5.4</jackson.version>
     </properties>
 
     <dependencyManagement>
@@ -81,6 +82,12 @@
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-oxm</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
             <!--spring end-->
             <!--custom common-->
             <dependency>
@@ -131,6 +138,18 @@
                 <version>${log4j.version}</version>
             </dependency>
             <!--logging end-->
+            <!--jackson start-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!--jackson end-->
         </dependencies>
     </dependencyManagement>
 

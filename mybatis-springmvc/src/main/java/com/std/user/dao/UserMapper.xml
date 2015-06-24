@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.std.user.dao.UserMapper">
+
+    <insert id="saveUser" parameterType="com.std.user.domain.User" flushCache="true" useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId">
+      INSERT INTO std_user(user_login_name,user_password,user_name,user_age,user_email,user_phone) VALUES (
+        #{userLoginName},#{userPassword},#{userName},#{userAge},#{userEmail},#{userPhone}
+      );
+    </insert>
+
+    <select id="selectUser" resultType="com.std.user.domain.User" useCache="true" timeout="3000">
+        select
+        user_id as userId,
+        user_login_name as userLoginName,
+        user_password as userPassword,
+        user_name as userName,
+        user_age as userAge,
+        user_email as userEmail,
+        user_phone as userPhone
+        from std_user where user_id = #{userId}
+    </select>
+</mapper>
