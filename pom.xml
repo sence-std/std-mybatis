@@ -89,7 +89,6 @@
                 <artifactId>spring-oxm</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-
             <!--spring end-->
             <!--custom common-->
             <dependency>
@@ -141,11 +140,6 @@
             </dependency>
             <!--logging end-->
             <!--jackson start-->
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
