@@ -12,5 +12,5 @@ cache
 i18n
 validator
 velocity
-interceptor
+shiro
 global exception handler
