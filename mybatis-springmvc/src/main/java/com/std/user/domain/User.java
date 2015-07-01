@@ -1,11 +1,14 @@
 package com.std.user.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  * Created by sence on 2015/6/21.
  */
 public class User {
 
     private Integer userId;
+    @NotEmpty(message = "{user.name.empty}")
     private String userName;
     private Integer userAge;
     private String userLoginName;

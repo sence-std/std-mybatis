@@ -19,8 +19,30 @@
 
        <mvc:annotation-driven />
 
-       <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-
+       <!-- velocityViewResolver velocityLayoutViewResolver 有两个视图解析器，目前只用 velocityViewResolver-->
+       <bean id="velocityViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+              <property name="suffix" value=".vm"/>
+              <property name="exposeRequestAttributes" value="true"/>
+              <property name="allowRequestOverride" value="true"/>
+              <property name="exposeSpringMacroHelpers" value="true"/>
+              <property name="requestContextAttribute" value="req"/>
+              <property name="contentType" value="text/html;charset=UTF-8"/>
        </bean>
 
+       <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+              <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+              <property name="validationMessageSource" ref="messageSource"/>
+       </bean>
+
+       <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+              <property name="basenames">
+                     <list>
+                            <value>classpath:message/validator</value>
+                            <value>classpath:org/hibernate/validator/ValidationMessages</value>
+                     </list>
+              </property>
+              <property name="useCodeAsDefaultMessage" value="false"/>
+              <property name="defaultEncoding" value="UTF-8"/>
+              <property name="cacheSeconds" value="600"/>
+       </bean>
 </beans>
