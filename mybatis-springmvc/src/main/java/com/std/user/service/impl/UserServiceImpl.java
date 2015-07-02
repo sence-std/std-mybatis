@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
        if(Check.isNull(user)){
            return null;
        }
-       return userMapper.saveUser(null);
+       return userMapper.saveUser(user);
     }
 
 

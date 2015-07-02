@@ -1,0 +1,22 @@
+<html>
+<body>
+<h2>
+    #set($hello="hello sence!")
+    ${hello}
+    <form action="/ms/user/add" method="post">
+        <label>用户名</label>
+        <input type="text" name="userLoginName"/>
+        <label>密码</label>
+        <input type="password" name="userPassword"/>
+        <label>年龄</label>
+        <input type="text" name="userAge"/>
+        <label>真实名</label>
+        <input type="text" name="userName"/>
+        <label>邮箱</label>
+        <input type="text" name="userEmail"/>
+        <input type="submit" value="sumit" />
+    </form>
+</h2>
+
+</body>
+</html>

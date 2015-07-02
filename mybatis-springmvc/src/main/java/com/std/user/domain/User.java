@@ -2,14 +2,18 @@ package com.std.user.domain;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.Size;
+
 /**
  * Created by sence on 2015/6/21.
  */
 public class User {
 
     private Integer userId;
-    @NotEmpty(message = "{user.name.empty}")
+    @NotEmpty(message="{user.name.empty}")
+    @Size(min = 2,max=10,message = "{name.mismatch}")
     private String userName;
+
     private Integer userAge;
     private String userLoginName;
     private String userPassword;

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +39,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/add", method = {RequestMethod.POST})
-    public ResponseEntity<Map<String, Object>> save(@Validated User user, BindingResult result) throws MybatisServiceException {
+    public ResponseEntity<Map<String, Object>> save(@Valid User user, BindingResult result) throws MybatisServiceException {
         Map<String, Object> map = new HashMap<>();
         if (result.hasErrors()) {
             List<FieldError> errors = result.getFieldErrors();
