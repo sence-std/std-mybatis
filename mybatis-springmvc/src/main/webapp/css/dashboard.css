@@ -103,3 +103,16 @@ body {
     display: inline-block;
     border-radius: 50%;
 }
+.crile{
+    background-color: #66FFFF;
+    border-radius: 50%;
+    width: 100px;
+    height:100px;
+    line-height: 100px;
+    display: inline-block;
+    color: #fff;
+}
+.crile1{
+    background-color: #6699FF;
+}
+
