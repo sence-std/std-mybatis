@@ -50,7 +50,7 @@ public class UserController {
             return new ResponseEntity(map, HttpStatus.OK);
         }
         userService.saveUser(user);
-        map.put("status", "ERROR");
+        map.put("status", "OK");
         map.put("user", user);
         return new ResponseEntity(map, HttpStatus.OK);
     }

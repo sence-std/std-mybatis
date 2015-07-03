@@ -1,0 +1,2 @@
+<link href="${ctx}/css/bs/bootstrap.min.css" rel="stylesheet">
+<link href="${ctx}/css/dashboard.css" rel="stylesheet">
