@@ -68,4 +68,12 @@ public class User {
     public void getUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName
+				+ ", userAge=" + userAge + ", userLoginName=" + userLoginName
+				+ ", userPassword=" + userPassword + ", userEmail=" + userEmail
+				+ ", userPhone=" + userPhone + "]";
+	}
 }
