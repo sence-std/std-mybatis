@@ -47,10 +47,10 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
-        </dependency>
+        </dependency> -->
         <!--commons dbcp end-->
         <!--logging start-->
         <dependency>

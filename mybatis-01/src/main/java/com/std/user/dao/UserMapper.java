@@ -21,7 +21,14 @@ public interface UserMapper {
      * @param user
      * @return
      */
- //   public int updateUser(User user);
+    public int updateUser(User user);
+    
+    /**
+     * 删除用户
+     * @param user
+     * @return
+     */
+    public Integer deleteUser(Integer userId);
 
     /**
      * 查找用户
@@ -35,6 +42,6 @@ public interface UserMapper {
      * @param user
      * @return
      */
-  //  public List<User> selectUsers(User user);
+    public List<User> selectUsers(Integer maxId);
 
 }

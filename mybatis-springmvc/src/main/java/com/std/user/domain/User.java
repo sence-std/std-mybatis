@@ -7,9 +7,10 @@ import javax.validation.constraints.Size;
 /**
  * Created by sence on 2015/6/21.
  */
-public class User {
-
-    private Integer userId;
+public class User implements java.io.Serializable{
+	private static final long serialVersionUID = 1389185690002879432L;
+	
+	private Integer userId;
     @NotEmpty(message="{user.name.empty}")
     @Size(min = 2,max=10,message = "{name.mismatch}")
     private String userName;

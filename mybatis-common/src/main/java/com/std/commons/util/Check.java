@@ -8,7 +8,6 @@ import java.util.Collection;
 public class Check {
 
     /**
-     * 判断对象是否为空
      * @param obj
      * @return boolean
      */
@@ -17,7 +16,6 @@ public class Check {
     }
 
     /**
-     * 判断是否是空字符串
      * @param str
      * @return
      */
@@ -32,7 +30,6 @@ public class Check {
     }
 
     /**
-     * 判断是否是空集合
      * @param collect
      * @return
      */
