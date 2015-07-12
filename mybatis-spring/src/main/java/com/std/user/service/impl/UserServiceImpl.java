@@ -6,6 +6,8 @@ import com.std.user.dao.UserMapper;
 import com.std.user.domain.User;
 import com.std.user.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -13,6 +15,7 @@ import javax.annotation.Resource;
  * Created by sence on 2015/6/22.
  */
 @Service("userService")
+@Transactional
 public class UserServiceImpl implements UserService{
 
     @Resource(name="userMapper")
@@ -25,6 +28,7 @@ public class UserServiceImpl implements UserService{
      * @throws MybatisServiceException
      */
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public Integer saveUser(User user) throws MybatisServiceException {
        if(Check.isNull(user)){
            return null;

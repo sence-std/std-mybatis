@@ -45,8 +45,8 @@ public class T_UserDao {
         User user = new User();
         user.setUserAge(12);
         user.setUserPassword("shengqi123");
-        user.setUserLoginName("月月");
-        user.setUserName("若若");
+        user.setUserLoginName("月月a");
+        user.setUserName("若若a");
         Integer records = userMapper.saveUser(user);
         sqlSession.commit();
         System.out.println(user.getUserId());
