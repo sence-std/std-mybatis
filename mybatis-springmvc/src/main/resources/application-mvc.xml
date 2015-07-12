@@ -17,6 +17,7 @@
               <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
        </context:component-scan>
 
+
        <mvc:annotation-driven validator="validator" />
 
        <!-- velocityViewResolver velocityLayoutViewResolver 有两个视图解析器，目前只用 velocityViewResolver-->

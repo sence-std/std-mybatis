@@ -15,7 +15,4 @@
         </property>
     </bean>
 
-    <!-- file Load -->
-    <bean id="velocityEngine" factory-bean="velocityConfigurer" factory-method="createVelocityEngine"/>
-
 </beans>

@@ -14,30 +14,53 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-
-    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+    <bean id="dataSource_M" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="${jdbc.master.mariadb.driver}" />
         <property name="url" value="${jdbc.master.mariadb.url}" />
         <property name="username" value="${jdbc.master.mariadb.username}" />
         <property name="password" value="${jdbc.master.mariadb.password}" />
     </bean>
 
+    <bean id="dataSource_S" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.slave.mariadb.driver}" />
+        <property name="url" value="${jdbc.slave.mariadb.url}" />
+        <property name="username" value="${jdbc.slave.mariadb.username}" />
+        <property name="password" value="${jdbc.slave.mariadb.password}" />
+    </bean>
+
     <!--mybatis sqlsession factory-->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
+    <bean id="sqlSessionFactory_S" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource_S" />
         <property name="mapperLocations" value="classpath*:com/std/*/dao/*.xml"/>
         <!--
         <property name="typeAliasesPackage" value="com.std.user.domain"/>
         -->
     </bean>
 
-    <!--scan dao generator mapper-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.std.*.dao" />
+    <!--mybatis sqlsession factory-->
+    <bean id="sqlSessionFactory_M" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource_M" />
+        <property name="mapperLocations" value="classpath*:com/std/*/dao/*.xml"/>
+        <!--
+        <property name="typeAliasesPackage" value="com.std.user.domain"/>
+        -->
+    </bean>
+
+    <bean id="sqlSession_read" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory_S" />
+    </bean>
+
+    <bean id="sqlSession_write" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory_M" />
+    </bean>
+
+    <bean id="mybatisDaoContext" class="com.std.common.MybatisDaoContext">
+        <property name="readSqlSession" ref="sqlSession_read" />
+        <property name="writeSqlSession" ref="sqlSession_write" />
     </bean>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource_M" />
     </bean>
 
     <import resource="application_velocity.xml"/>

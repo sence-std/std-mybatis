@@ -31,11 +31,14 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/{userId}", method = {RequestMethod.GET})
-    public
-    @ResponseBody
-    User load(@PathVariable Integer userId) throws MybatisServiceException {
+    public @ResponseBody User load(@PathVariable Integer userId) throws MybatisServiceException {
         User user = userService.findUser(userId);
         return user;
+    }
+
+    @RequestMapping(value = "/add", method = {RequestMethod.GET})
+    public String addForm() throws MybatisServiceException{
+        return "addui";
     }
 
     @RequestMapping(value = "/add", method = {RequestMethod.POST})
